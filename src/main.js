@@ -20,3 +20,5 @@ var vm = new Vue({
     router
 
 });
+
+$('#root').css('background-color','red');

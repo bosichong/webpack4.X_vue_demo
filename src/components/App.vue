@@ -1,7 +1,7 @@
 
 
 <template>
-    <div>
+    <div id="root" >
         <h1>App 首页</h1>
         <router-link to="/account">account</router-link>
         <router-link to="/list">list</router-link>

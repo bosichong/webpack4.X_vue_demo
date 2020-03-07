@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-// 启用热更新的 第2步
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
@@ -53,6 +52,7 @@ module.exports = {
     },
     plugins: [
         new VueLoaderPlugin(),
+        // 全局引入JQ
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'

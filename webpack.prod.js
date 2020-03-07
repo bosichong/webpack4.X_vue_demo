@@ -7,6 +7,9 @@ const extractTextPlugin = require("extract-text-webpack-plugin");
 // new CleanWebpackPlugin(),//清理目录 而且不用加入目录数组['dist']
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
+//静态资源输出
+const copyWebpackPlugin = require("copy-webpack-plugin");
+
 const common = require('./webpack.common.js');
 
 let prodConfig = {
@@ -44,7 +47,12 @@ let prodConfig = {
     plugins: [
 		new CleanWebpackPlugin(), //清理目录
 		
-        new extractTextPlugin('css/[name].css'),
+		new extractTextPlugin('css/[name].css'),
+		// copy静态资源到指定目录
+		new copyWebpackPlugin([{
+			from:path.resolve(__dirname,"src/js/lib"),
+			to:'./js/lib'
+		}])
     ]
 };
 
