@@ -10,7 +10,8 @@ Vue.use(VueRouter);
 import App from "./components/App.vue";
 import router from './router';
 
-
+//导入 cdn的jQuery
+import $ from 'jquery';
 
 
 

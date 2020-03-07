@@ -13,6 +13,9 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
     },
+    externals: {
+        jquery: 'jQuery'
+      },
     module: {
         rules: [{
                 test: /\.(png|jpg|jpeg|gif)$/i,
@@ -53,10 +56,10 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin(),
         // 全局引入JQ
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
-        }),
+        // new webpack.ProvidePlugin({
+        //     $: 'jquery',
+        //     jQuery: 'jquery'
+        // }),
 
         // 自动生成html模板
         new HtmlWebpackPlugin({
